@@ -1,38 +1,351 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --ff-primary: 'Source Code Pro', sans-serif; 
+  --ff-secondary: 'Source Code Pro', monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', sans-serif;
   color: white;
+  background-color: #E1EBEE;
+}
+body {
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }
 
-.App-link {
-  color: #61dafb;
+html, body {
+	overflow-x: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+html {
+  box-sizing: border-box;
+
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
   }
-  to {
-    transform: rotate(360deg);
+  #about {
+    min-height: 100vh;
+  }
+  .h-content > h3 > span {
+  font-size: 2rem;
+}
+  .projects {
+    width: 24em;
+    height: 24em;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/*10px = 1rem */ 
+.navbar > a, header {
+  font-size: 2rem
+}
+
+
+.h-content {
+  max-width: 80rem;
+  margin-bottom: 5rem;
+}
+
+.h-content, .personalimg {
+  display: inline-block;
+  margin: 5rem;
+}
+
+.h-content > h1 {
+  font-size: 5.5rem;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+  margin: -3px 0;
+  font-weight: 700;
+}
+
+.h-content > h3 {
+  font-size: 3rem;
+  padding: 1rem;
+  opacity: 0; 
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+  font-weight: 700;
+}
+.h-content > p {
+  font-size: 1.9rem;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+.h-content h3:nth-of-type(2) {
+  margin-bottom: 5rem;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: .7s;
+}
+.h-content > h3 > span {
+  color: #778da9;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem .5rem;
+  z-index: 10;
+  background-color: rgba(76, 76, 76, 0.36);
+  backdrop-filter: blur(4px);
+}
+.header > a:nth-of-type(1){
+  margin-left: 1rem;
+}
+.navbar a {
+  display:inline-block;
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  opacity: 0;
+  transition: .3s;
+  animation: slideTop .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+.navbar a:nth-of-type(4) {
+  margin-right: 2rem;
+}
+
+.navbar a:hover {
+  color: #778da9
+}
+
+#home {
+  position: relative;
+  background: #0d1b2a;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding: 15rem 10% 0; 
+}
+a {
+  color: white;
+  text-decoration: none; /* no underline */
+}
+.personalimg > img {
+  width: 100%; /* Starting size for larger screens */
+  max-width: 100rem;
+  
+ /* Maintain aspect ratio */
+  border-radius: 20%; /* Example styling */
+  transition: width 0.3s ease;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 2s;
+  border-radius: 20%;
+  
+  
+  /* Smooth transition for resizing, optional */
+}
+
+.social > a {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 4rem;
+height: 4rem;
+background: transparent;
+border: 2px solid #90e0ef;
+font-size: 2rem;
+margin: 30px 15px 30px 0;
+color: #90e0ef;
+border-radius: 50%;
+transition: .5s ease;
+opacity: 0;
+animation: slideLeft 1s ease forwards;
+animation-delay: calc(.2s * var(--i));
+}
+.social a:hover {
+  background: #90e0ef;
+  color: black;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  padding: 12px 28px;
+  background: #415a77;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #415a77;
+  font-size: 1.6rem;
+  font-weight: 300;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+
+.logo {
+  font-size: 2.3rem;
+  cursor: default;
+  font-weight: 600;
+  cursor: default;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+
+
+.a-content > h2 { 
+  font-size: 5rem;
+}
+.a-content > p {
+  font-size: 2.5rem;
+  font-family: 'Source Code Pro';
+  line-height: 1.6;
+}
+
+
+
+
+
+
+#about {
+  position: relative;
+  min-width: 100vw;
+  min-height: 60vh;
+  font-weight: 200;
+  font-size: 2.3rem;
+  padding: 8rem 10% 0;
+  background: #1d2d44;
+  font-family: 'Poppins', sans-serif;
+}
+
+.codelogo > i {
+  font-size: 8rem;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+  
+}
+
+.codelogo {
+  margin-top: 2rem;
+}
+
+@media (max-width: 75em) {
+  .projects {
+    width: 45em;
+    height: 45em;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  .projects {
+    width: 45em;
+    height: 40em;
+  }
+  #gridcontainer {
+    grid-template-columns: auto; /* Change to one column */
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  
+  .projects {
+    width: 35em;
+    height: 35em;
+  }
+  #gridcontainer {
+    grid-template-columns: auto; /* Change to one column */
+  }
+}
+/*CURVE*/
+
+
+/* ANIMATIONS */
+
+@keyframes slideRight {
+0% {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+100% {
+  transform: translateX(0);
+  opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+  transform: translateY(100px);
+  opacity: 0;
+}
+100% {
+  transform: translateY(0);
+  opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+  transform: translateY(-100px);
+  opacity: 0;
+}
+100% {
+  transform: translateY(0);
+  opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+  transform: translateX(100px);
+  opacity: 0;
+}
+100% {
+  transform: translateY(0);
+  opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+  transform: scale(0);
+  opacity: 0;
+}
+100% {
+  transform: scale(1);
+  opacity: 1;
   }
 }
