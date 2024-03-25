@@ -70,7 +70,7 @@ function Home() {
                     Just saying hello from my vacation in Barcelona. This is me, enjoying the moment away from it all.
                     </p>
                     <div className="imgbox">
-                    <img src="https://lh3.googleusercontent.com/pw/ABLVV86YOBe18UqyrvoHqmOZRhbJQJ6uzTLsA7nSZPWq3inPDzBchQxqMsrxsCks_-EwsBpwar3W-bdax4JyU-ztoe_F5VcGRhlKz0-Mgu4BTJ3Mejg4uuU=w2400" alt="Juan Alvarado" />
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNdsPqmyDHNUvtDRC52ILz5ezjvSh6GSd6SZPWzea_fFNKlgjAg7W87wHcfQnQTrO7WEE3eh03DbquYB9o4Wp_evESjC_enDueKclsBjBF01vOOJmc=w2400" alt="Juan Alvarado" />
                     </div>
                     <a href="#home" className="link-2" aria-label="Home Page"></a>
                     </div>

@@ -18,6 +18,7 @@ body{
   color: white;
   background-color: #E1EBEE;
 }
+
 body {
   transition: background-color 0.3s ease; /* Smooth transition for background color change */
 }

@@ -20,6 +20,7 @@ body {
     opacity: 0;
     animation: slideLeft 1s ease forwards;
     animation-delay: 2s;
+    margin-bottom: 50px;
   }
 .link-1:hover,
 .link-1:focus {
