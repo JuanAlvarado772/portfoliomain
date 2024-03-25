@@ -48,15 +48,19 @@ const Portfolio = () => {
         </figure>
         <figure className="js-slider_item img-3">
           <div className="js-slider_img">
-          <a href="https://lighthouseechoesbeyond.netlify.app/" target="_blank" rel="noreferrer noopener"><img className="c-img-h-full" src="https://lh3.googleusercontent.com/pw/ABLVV86Tr3ESnovZGR6V7D33Ov5SpnEuaSO5FY_A7dEpg41uzKjpOo-RAbw2JoPBKhUc9ftdt1fAgMFrZVLlxUytZsqJfFPyT4v_zXScj3EafI4xy4vB3AA=w2400" alt="" /></a> 
+            <a href="https://bookpal.netlify.app/" target="_blank" rel="noreferrer noopener">
+              <img className="c-img-h-full" src="https://lh3.googleusercontent.com/pw/AP1GczMTqAVQomiCkYxr_OxISoL7aACcDZE4zxHxLLoBd6ylPDrQB5ichQzEDTv95wI8ptG8sESFH1D4EdSSXUyRFat2W-eO7aFcE4TLkEAZ-Wfd1UeJ7Vs=w2400" alt="BookPal Project" />
+            </a> 
           </div>
           <figcaption className="wo-caption">
-            <h3 className="wo-h3">Light Echoes: A Text Narrative <br/><a href="https://github.com/JuanAlvarado772/Red-Forest-Text-RPG" target="_blank" rel="noreferrer noopener"><i className="fa-brands fa-github" style={{'color': 'black'}}></i></a></h3>
+            <h3 className="wo-h3">
+              BookPal<br/>
+              <a href="https://github.com/JuanAlvarado772/BookPal" target="_blank" rel="noreferrer noopener"><i className="fa-brands fa-github" style={{'color': 'black'}}></i></a>
+            </h3>
             <ul className="wo-credit">
-              <li>
-A text narrative project, built on vanilla JavaScript, offers an immersive storytelling experience where every choice significantly impacts the progression and outcomes of the story. </li>
-              <br/> <li>Leveraging the simplicity and flexibility of vanilla JS, it creates a rich, interactive narrative that adapts dynamically to decisions, leading to a multitude of possible endings.</li>
-              <li></li>
+              <li>BookPal simplifies the journey of discovering new books with a streamlined search functionality powered by the Google Books API. This full-stack project leverages Python for backend development, managing API requests and data processing to ensure users can easily find books that match their interests.</li>
+              <br />
+              <li>The React-based frontend presents a user-friendly interface, allowing seamless navigation and interaction with the search feature. BookPal is the go-to web application for book enthusiasts seeking to explore a vast library of books at their fingertips.</li>
             </ul>
           </figcaption>
         </figure>
