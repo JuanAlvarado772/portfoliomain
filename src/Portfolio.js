@@ -54,7 +54,7 @@ const Portfolio = () => {
           </div>
           <figcaption className="wo-caption">
             <h3 className="wo-h3">
-              BookPal<br/>
+              BookPal App<br/>
               <a href="https://github.com/JuanAlvarado772/BookPal" target="_blank" rel="noreferrer noopener"><i className="fa-brands fa-github" style={{'color': 'black'}}></i></a>
             </h3>
             <ul className="wo-credit">
